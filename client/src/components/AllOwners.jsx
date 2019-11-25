@@ -22,7 +22,7 @@ export default class AllOwners extends Component {
 
         const listOfOwners = this.state.allOwners.map((owner)=> {
             return <div>
-                <h2>{owner.name}</h2>
+                {owner.name}
             </div>
         })
 
@@ -31,7 +31,7 @@ export default class AllOwners extends Component {
             <div>
                 <h1>Owners</h1>
 
-                {listOfOwners}
+                <h2>{listOfOwners}</h2>
             </div>
         )
     }
