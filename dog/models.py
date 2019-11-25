@@ -22,8 +22,8 @@ class Dog(models.Model):
     age = models.IntegerField(default='n/a')
     breed = models.CharField(max_length=100, default='n/a')
     photo_url = models.TextField(default='n/a')
-    owner = models.ForeignKey(Owner, on_delete=models.CASCADE, related_name='owners')
-    action = models.ForeignKey(Action, on_delete=models.CASCADE, related_name='actions')
+    owner = models.ForeignKey(Owner, on_delete=models.CASCADE, related_name='dog')
+    action = models.ForeignKey(Action, on_delete=models.CASCADE, related_name='dog')
 
 
     def __str__(self):
