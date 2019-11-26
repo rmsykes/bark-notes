@@ -23,7 +23,10 @@ export default class AllDogs extends Component {
         const listOfDogs = this.state.allDogs.map((dog) => {
             return <div>
                 <Link to={`/dog/${dog.id}`}>
-                    {dog.name}
+                    <div>
+                        <img src={dog.photo_url} alt="dog photo"/>
+                    </div>
+                    {dog.name} 
                 </Link>
             </div>
         })

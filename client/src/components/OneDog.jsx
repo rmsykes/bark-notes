@@ -35,6 +35,11 @@ export default class OneDog extends Component {
 
                 <h1>{this.state.dog.name}</h1>
 
+                <img src={this.state.dog.photo_url} alt="dog photo"/>
+
+
+                
+
             </div>
         )
     }
