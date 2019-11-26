@@ -22,7 +22,9 @@ export default class AllDogs extends Component {
 
         const listOfDogs = this.state.allDogs.map((dog) => {
             return <div>
-                {dog.name}
+                <Link to={`/dog/${dog.id}`}>
+                    {dog.name}
+                </Link>
             </div>
         })
 
