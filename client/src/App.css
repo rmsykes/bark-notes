@@ -15,4 +15,11 @@ img {
 
 .createForm {
   border: solid red 5px;
+  margin: 25px 0;
+}
+
+.recordedDogActions {
+  border: solid red 5px;
+  margin: 25px 0;
+
 }

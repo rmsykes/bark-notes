@@ -37,8 +37,18 @@ export default class OneDog extends Component {
         .then((res) => {
             this.setState({ dog: res.data })
         })
-  
+        .then((res) => {
+            this.getActionData()
+        })
     }
+
+    getActionData = () => {
+        axios.get(`/api/v1/action`)
+        .then((res) => {
+            this.setState({ actionData: res.data })
+        })
+    }
+
 
 
     createNewAction = (evt) => {
@@ -72,10 +82,17 @@ export default class OneDog extends Component {
 
                 <img src={this.state.dog.photo_url} alt="dog photo"/>
 
+                <div className='recordedDogActions'>
+                    <h2>Recent Dog Actions</h2>
+
+                </div>
+
 
                 <div className='createForm'>
-                    <form >
-                        <h2>Record Dog Action</h2>
+                    <form onSubmit={this.createNewAction}>
+
+                        <h2>Record New Dog Action</h2>
+
                         <input 
                             type="string"
                             name="walk"
