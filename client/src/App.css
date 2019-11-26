@@ -12,3 +12,7 @@ nav {
 img {
   width: 250px;
 }
+
+.createForm {
+  border: solid red 5px;
+}
