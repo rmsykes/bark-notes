@@ -4,6 +4,7 @@ import './App.css';
 import Home from './components/Home'
 import AllOwners from './components/AllOwners'
 import AllDogs from './components/AllDogs'
+import OneDog from './components/OneDog'
 
 
 export default class App extends Component {
@@ -17,6 +18,7 @@ export default class App extends Component {
           <Route exact path='/' component={Home} />
           <Route exact path='/owner' component={AllOwners} />
           <Route exact path='/dog' component={AllDogs} />
+          <Route path='/dog/:dogId' component={OneDog} />
         </Switch>
       </Router>
     )
