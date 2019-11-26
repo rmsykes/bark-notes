@@ -17,7 +17,6 @@ class Dog(models.Model):
     photo_url = models.TextField(default='n/a')
     owner = models.ForeignKey(Owner, on_delete=models.CASCADE, related_name='dogs')
 
-
     def __str__(self):
         return self.name
 
@@ -28,4 +27,4 @@ class Action(models.Model):
     poop = models.CharField(max_length=101, default='n/a')
     pee = models.CharField(max_length=100, default='n/a')
     medicine = models.CharField(max_length=100, default='n/a')
-    dog = models.ForeignKey(Dog, on_delete=models.CASCADE, related_name='actions', default='n/a')
+    dog = models.ForeignKey(Dog, on_delete=models.CASCADE, related_name='actions')

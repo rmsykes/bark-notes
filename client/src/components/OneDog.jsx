@@ -53,12 +53,19 @@ export default class OneDog extends Component {
 
     createNewAction = (evt) => {
         evt.preventDefault()
-        const newAction = this.state.newAction
-
-        axios.post(`/api/v1/action`, newAction)
-        .then((res) => {
-            this.componentDidMount()
+        const dogId = this.props.match.params.dogId;
+        const newAction = {
+            dog: dogId
+        }
+        Object.entries(this.state.newAction).forEach(([key, val]) => {
+            if(val !== '') {
+                newAction[key] = val
+            }
         })
+        axios.post(`/api/v1/action/`, newAction)
+            .then((res) => {
+                this.componentDidMount()
+            })
     }
 
 
@@ -70,6 +77,14 @@ export default class OneDog extends Component {
 
 
     render() {
+
+        const listOfDogActions = this.state.actionData.map((action)=> {
+            return <div>
+                
+                {action.walk}
+            </div>
+        })
+
         return (
             <div>
                 <nav>
@@ -84,7 +99,8 @@ export default class OneDog extends Component {
 
                 <div className='recordedDogActions'>
                     <h2>Recent Dog Actions</h2>
-
+                    {listOfDogActions}
+                    <br/>
                 </div>
 
 
