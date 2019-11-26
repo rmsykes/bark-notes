@@ -34,19 +34,19 @@ export default class OneDog extends Component {
 
     componentDidMount = () => {
         axios.get(`/api/v1/dog/${this.props.match.params.dogId}`)
-        .then((res) => {
-            this.setState({ dog: res.data })
-        })
-        .then((res) => {
-            this.getActionData()
-        })
+            .then((res) => {
+                this.setState({ dog: res.data })
+            })
+            .then((res) => {
+                this.getActionData()
+            })
     }
 
     getActionData = () => {
         axios.get(`/api/v1/action`)
-        .then((res) => {
-            this.setState({ actionData: res.data })
-        })
+            .then((res) => {
+                this.setState({ actionData: res.data })
+            })
     }
 
 
@@ -58,21 +58,29 @@ export default class OneDog extends Component {
             dog: dogId
         }
         Object.entries(this.state.newAction).forEach(([key, val]) => {
-            if(val !== '') {
+            if (val !== '') {
                 newAction[key] = val
             }
         })
 
-
-        axios.post(`/api/v1/action/`, newAction)
-            .then((res) => {
-                this.componentDidMount()
-            })
+        if (
+            this.state.newAction.walk !== '' ||
+            this.state.newAction.eat !== '' ||
+            this.state.newAction.poop !== '' ||
+            this.state.newAction.pee !== '' ||
+            this.state.newAction.medicine !== '') {
+            axios.post(`/api/v1/action/`, newAction)
+                .then((res) => {
+                    this.componentDidMount()
+                })
+        } else {
+            alert('Please enter a new dog action')
+        }
     }
 
 
     handleInputChange = (evt) => {
-        const copiedNewAction = {...this.state.newAction}
+        const copiedNewAction = { ...this.state.newAction }
         copiedNewAction[evt.target.name] = evt.target.value
         this.setState({ newAction: copiedNewAction })
     }
@@ -80,35 +88,35 @@ export default class OneDog extends Component {
 
     render() {
 
-        const listOfDogActions = this.state.actionData.map((action)=> {
-            if(action.walk !== 'n/a' ) {
+        const listOfDogActions = this.state.actionData.map((action) => {
+            if (action.walk !== 'n/a') {
                 return <div>
                     {action.walk}
                 </div>
             }
-            if(action.eat !== 'n/a') {
+            if (action.eat !== 'n/a') {
                 return <div>
                     {action.eat}
                 </div>
             }
-            if(action.poop !== 'n/a') {
+            if (action.poop !== 'n/a') {
                 return <div>
                     {action.poop}
                 </div>
             }
-            if(action.pee !== 'n/a') {
+            if (action.pee !== 'n/a') {
                 return <div>
                     {action.pee}
                 </div>
             }
-            if(action.medicine !== 'n/a') {
+            if (action.medicine !== 'n/a') {
                 return <div>
                     {action.medicine}
                 </div>
             }
         })
 
-        
+
 
         return (
             <div>
@@ -120,12 +128,12 @@ export default class OneDog extends Component {
 
                 <h1>{this.state.dog.name}</h1>
 
-                <img src={this.state.dog.photo_url} alt="dog photo"/>
+                <img src={this.state.dog.photo_url} alt="dog photo" />
 
                 <div className='recordedDogActions'>
                     <h2>Recent Dog Actions</h2>
                     {listOfDogActions}
-                    <br/>
+                    <br />
                 </div>
 
 
@@ -134,7 +142,7 @@ export default class OneDog extends Component {
 
                         <h2>Record New Dog Action</h2>
 
-                        <input 
+                        <input
                             type="string"
                             name="walk"
                             placeholder="Record Walk"
@@ -142,7 +150,7 @@ export default class OneDog extends Component {
                             value={this.state.newAction.walk}
                         />
 
-                        <input 
+                        <input
                             type="string"
                             name="eat"
                             placeholder="Record Eat"
@@ -150,7 +158,7 @@ export default class OneDog extends Component {
                             value={this.state.newAction.eat}
                         />
 
-                        <input 
+                        <input
                             type="string"
                             name="poop"
                             placeholder="Record Poop"
@@ -158,15 +166,15 @@ export default class OneDog extends Component {
                             value={this.state.newAction.poop}
                         />
 
-                        <input 
+                        <input
                             type="string"
                             name="pee"
                             placeholder="Record Pee"
                             onChange={this.handleInputChange}
                             value={this.state.newAction.pee}
-                        />  
+                        />
 
-                        <input 
+                        <input
                             type="string"
                             name="medicine"
                             placeholder="Record Medicine"
@@ -174,7 +182,7 @@ export default class OneDog extends Component {
                             value={this.state.newAction.medicine}
                         />
 
-                        <input type='submit' value='Record New Action'/>
+                        <input type='submit' value='Record New Action' />
                     </form>
 
                 </div>
