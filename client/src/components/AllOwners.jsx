@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import axios from 'axios'
+import { Link } from 'react-router-dom'
+
 
 export default class AllOwners extends Component {
 
@@ -10,9 +12,9 @@ export default class AllOwners extends Component {
 
     componentDidMount() {
         axios.get('/api/v1/owner')
-        .then((res) => {
-            this.setState({ allOwners: res.data })
-        })
+            .then((res) => {
+                this.setState({ allOwners: res.data })
+            })
     }
 
 
@@ -20,7 +22,7 @@ export default class AllOwners extends Component {
 
     render() {
 
-        const listOfOwners = this.state.allOwners.map((owner)=> {
+        const listOfOwners = this.state.allOwners.map((owner) => {
             return <div>
                 {owner.name}
             </div>
@@ -29,6 +31,11 @@ export default class AllOwners extends Component {
 
         return (
             <div>
+                <nav>
+                    <Link to='/'>Home</Link>
+                    <Link to='/dog'>Dogs</Link>
+                    <Link to='/owner'>Owners</Link>
+                </nav>
                 <h1>Owners</h1>
 
                 <h2>{listOfOwners}</h2>
