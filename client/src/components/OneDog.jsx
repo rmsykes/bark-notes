@@ -62,6 +62,8 @@ export default class OneDog extends Component {
                 newAction[key] = val
             }
         })
+
+
         axios.post(`/api/v1/action/`, newAction)
             .then((res) => {
                 this.componentDidMount()
@@ -79,11 +81,34 @@ export default class OneDog extends Component {
     render() {
 
         const listOfDogActions = this.state.actionData.map((action)=> {
-            return <div>
-                
-                {action.walk}
-            </div>
+            if(action.walk !== 'n/a' ) {
+                return <div>
+                    {action.walk}
+                </div>
+            }
+            if(action.eat !== 'n/a') {
+                return <div>
+                    {action.eat}
+                </div>
+            }
+            if(action.poop !== 'n/a') {
+                return <div>
+                    {action.poop}
+                </div>
+            }
+            if(action.pee !== 'n/a') {
+                return <div>
+                    {action.pee}
+                </div>
+            }
+            if(action.medicine !== 'n/a') {
+                return <div>
+                    {action.medicine}
+                </div>
+            }
         })
+
+        
 
         return (
             <div>
