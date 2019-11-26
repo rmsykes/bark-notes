@@ -84,6 +84,38 @@ export default class OneDog extends Component {
                             value={this.state.newAction.walk}
                         />
 
+                        <input 
+                            type="string"
+                            name="eat"
+                            placeholder="Record Eat"
+                            onChange={this.handleInputChange}
+                            value={this.state.newAction.eat}
+                        />
+
+                        <input 
+                            type="string"
+                            name="poop"
+                            placeholder="Record Poop"
+                            onChange={this.handleInputChange}
+                            value={this.state.newAction.poop}
+                        />
+
+                        <input 
+                            type="string"
+                            name="pee"
+                            placeholder="Record Pee"
+                            onChange={this.handleInputChange}
+                            value={this.state.newAction.pee}
+                        />  
+
+                        <input 
+                            type="string"
+                            name="medicine"
+                            placeholder="Record Medicine"
+                            onChange={this.handleInputChange}
+                            value={this.state.newAction.medicine}
+                        />
+
                         <input type='submit' value='Record New Action'/>
                     </form>
 
