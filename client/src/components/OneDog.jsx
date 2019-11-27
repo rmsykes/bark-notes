@@ -7,18 +7,13 @@ export default class OneDog extends Component {
 
     state = {
         dog: {
+            id: '',
             name: '',
             age: '',
             breed: '',
             photo_url: '',
             owner: '',
-            // actions: {
-            //     walk: '',
-            //     eat: '',
-            //     poop:'',
-            //     pee: '',
-            //     medicine: ''
-            // },
+            actions: []
         },
         actionData: [],
         newAction: {
@@ -37,18 +32,7 @@ export default class OneDog extends Component {
             .then((res) => {
                 this.setState({ dog: res.data })
             })
-            .then((res) => {
-                this.getActionData()
-            })
-    }
-
-    getActionData = () => {
-        axios.get(`/api/v1/action`)
-            .then((res) => {
-                this.setState({ actionData: res.data })
-            })
-    }
-
+        }
 
 
     createNewAction = (evt) => {
@@ -62,19 +46,58 @@ export default class OneDog extends Component {
                 newAction[key] = val
             }
         })
-
         if (
-            this.state.newAction.walk !== '' ||
-            this.state.newAction.eat !== '' ||
-            this.state.newAction.poop !== '' ||
-            this.state.newAction.pee !== '' ||
+            this.state.newAction.walk !== '' &&
+            this.state.newAction.eat === '' &&
+            this.state.newAction.poop === '' &&
+            this.state.newAction.pee === '' &&
+            this.state.newAction.medicine === '') {
+            axios.post(`/api/v1/action/`, newAction)
+                .then((res) => {
+                    this.componentDidMount()
+                })
+        } else if (
+            this.state.newAction.walk === '' &&
+            this.state.newAction.eat !== '' &&
+            this.state.newAction.poop === '' &&
+            this.state.newAction.pee === '' &&
+            this.state.newAction.medicine === '') {
+            axios.post(`/api/v1/action/`, newAction)
+                .then((res) => {
+                    this.componentDidMount()
+                })
+        } else if (
+            this.state.newAction.walk === '' &&
+            this.state.newAction.eat === '' &&
+            this.state.newAction.poop !== '' &&
+            this.state.newAction.pee === '' &&
+            this.state.newAction.medicine === '') {
+            axios.post(`/api/v1/action/`, newAction)
+                .then((res) => {
+                    this.componentDidMount()
+                })
+        } else if (
+            this.state.newAction.walk === '' &&
+            this.state.newAction.eat === '' &&
+            this.state.newAction.poop === '' &&
+            this.state.newAction.pee !== '' &&
+            this.state.newAction.medicine === '') {
+            axios.post(`/api/v1/action/`, newAction)
+                .then((res) => {
+                    this.componentDidMount()
+                })
+        } else if (
+            this.state.newAction.walk === '' &&
+            this.state.newAction.eat === '' &&
+            this.state.newAction.poop === '' &&
+            this.state.newAction.pee === '' &&
             this.state.newAction.medicine !== '') {
             axios.post(`/api/v1/action/`, newAction)
                 .then((res) => {
                     this.componentDidMount()
                 })
         } else {
-            alert('Please enter a new dog action')
+            alert('Please enter an action, and only one action at a time')
         }
     }
 
@@ -88,7 +111,7 @@ export default class OneDog extends Component {
 
     render() {
 
-        const listOfDogActions = this.state.actionData.map((action) => {
+        const listOfDogActions = this.state.dog.actions.map((action) => {
             if (action.walk !== 'n/a') {
                 return <div>
                     {action.walk}

@@ -6,7 +6,15 @@ import { Link } from 'react-router-dom'
 export default class AllDogs extends Component {
 
     state = {
-        allDogs: []
+        allDogs: [],
+        newDog: {
+            name: '',
+            age: '',
+            breed: '',
+            photo_url: '',
+            owner: '',
+            actions: []
+        }
     }
 
 
