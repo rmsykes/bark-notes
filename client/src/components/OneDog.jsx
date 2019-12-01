@@ -15,7 +15,6 @@ export default class OneDog extends Component {
             owner: '',
             actions: []
         },
-        actionData: [],
         newAction: {
             walk: '',
             eat: '',
@@ -155,7 +154,7 @@ export default class OneDog extends Component {
 
                 <div className='recordedDogActions'>
                     <h2>Recent Dog Actions</h2>
-                    {listOfDogActions}
+                    {listOfDogActions.reverse()}
                     <br />
                 </div>
 
