@@ -154,7 +154,7 @@ export default class OneDog extends Component {
 
                 <div className='recordedDogActions'>
                     <h2>Recent Dog Actions</h2>
-                    {listOfDogActions.reverse()}
+                    {listOfDogActions.reverse().slice(0,10)}
                     <br />
                 </div>
 
