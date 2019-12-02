@@ -63,7 +63,7 @@ export default class AllDogs extends Component {
                     <div className='dogList'>
                         <img src={dog.photo_url} alt="dog photo" />
                         <br/>
-                        {dog.name}
+                        <h2>{dog.name}</h2>
                     </div>
 
                     
@@ -80,7 +80,7 @@ export default class AllDogs extends Component {
                 </nav>
                 <h1>Dogs</h1>
 
-                <h2>{listOfDogs}</h2>
+                {listOfDogs}
 
 
 
