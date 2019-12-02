@@ -6,7 +6,7 @@ nav {
   display: flex;
   justify-content: space-around;
   padding: 20px 0;
-  border: solid red 5px;
+  border: solid rgb(67, 67, 192) 5px;
 }
 
 img {
@@ -14,12 +14,20 @@ img {
 }
 
 .createForm {
-  border: solid red 5px;
+  border: solid rgb(67, 67, 192) 5px;
   margin: 25px 0;
 }
 
 .recordedDogActions {
-  border: solid red 5px;
+  border: solid rgb(67, 67, 192) 5px;
   margin: 25px 0;
 
+}
+
+.actionInput {
+  justify-content: center;
+}
+
+.emoji {
+  margin-bottom: 0;
 }

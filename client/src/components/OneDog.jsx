@@ -31,7 +31,7 @@ export default class OneDog extends Component {
             .then((res) => {
                 this.setState({ dog: res.data })
             })
-        }
+    }
 
 
     createNewAction = (evt) => {
@@ -154,7 +154,7 @@ export default class OneDog extends Component {
 
                 <div className='recordedDogActions'>
                     <h2>Recent Dog Actions</h2>
-                    {listOfDogActions.reverse().slice(0,10)}
+                    {listOfDogActions.reverse().slice(1, 10)}
                     <br />
                 </div>
 
@@ -164,46 +164,55 @@ export default class OneDog extends Component {
 
                         <h2>Record New Dog Action</h2>
 
-                        <input
-                            type="string"
-                            name="walk"
-                            placeholder="Record Walk"
-                            onChange={this.handleInputChange}
-                            value={this.state.newAction.walk}
-                        />
+                        <div className='actionInput'>
 
-                        <input
-                            type="string"
-                            name="eat"
-                            placeholder="Record Eat"
-                            onChange={this.handleInputChange}
-                            value={this.state.newAction.eat}
-                        />
+                            <h1 className='emoji'>🚶</h1>
+                            <input
+                                type="string"
+                                name="walk"
+                                placeholder="Record Walk"
+                                onChange={this.handleInputChange}
+                                value={this.state.newAction.walk}
+                            />
 
-                        <input
-                            type="string"
-                            name="poop"
-                            placeholder="Record Poop"
-                            onChange={this.handleInputChange}
-                            value={this.state.newAction.poop}
-                        />
+                            <h1 className='emoji'>🍽</h1>
+                            <input
+                                type="string"
+                                name="eat"
+                                placeholder="Record Eat"
+                                onChange={this.handleInputChange}
+                                value={this.state.newAction.eat}
+                            />
 
-                        <input
-                            type="string"
-                            name="pee"
-                            placeholder="Record Pee"
-                            onChange={this.handleInputChange}
-                            value={this.state.newAction.pee}
-                        />
+                            <h1 className='emoji'>🚽💩</h1>
+                            <input
+                                type="string"
+                                name="poop"
+                                placeholder="Record Poop"
+                                onChange={this.handleInputChange}
+                                value={this.state.newAction.poop}
+                            />
 
-                        <input
-                            type="string"
-                            name="medicine"
-                            placeholder="Record Medicine"
-                            onChange={this.handleInputChange}
-                            value={this.state.newAction.medicine}
-                        />
+                            <h1 className='emoji'>🚽💦</h1>
+                            <input
+                                type="string"
+                                name="pee"
+                                placeholder="Record Pee"
+                                onChange={this.handleInputChange}
+                                value={this.state.newAction.pee}
+                            />
 
+                            <h1 className='emoji'>💊</h1>
+                            <input
+                                type="string"
+                                name="medicine"
+                                placeholder="Record Medicine"
+                                onChange={this.handleInputChange}
+                                value={this.state.newAction.medicine}
+                            />
+                            <br />
+                            <br />
+                        </div>
                         <input type='submit' value='Record New Action' />
                     </form>
 
