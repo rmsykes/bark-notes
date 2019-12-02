@@ -36,35 +36,22 @@ My target end user is
 /
 <br>
 
-![Home](photos/)
+![Home](photos/home.jpg)
 
-/concert
+/dog
 <br>
 
-![Concert](photos/)
+![All Dogs](photos/dog.jpg)
 
-/concert/:concertId
+/dog/:dogId
 <br>
 
-![One Concert](photos/)
+![One Dog](photos/dogId.jpg)
 
-/band
+/owner
 <br>
 
-![Band](photos/)
+![Owner](photos/owner.jpg)
 
-/band/:bandId
-<br>
 
-![One Band](photos/)
-
-/venue
-<br>
-
-![Venue](photos/)
-
-/venue/:venueId
-<br>
-
-![One Venue](photos/)
 
