@@ -161,6 +161,8 @@ export default class OneDog extends Component {
                 <h1>{this.state.dog.name}</h1>
 
                 <img src={this.state.dog.photo_url} alt="dog photo" />
+                <h4>Age: {this.state.dog.age}</h4>
+                <h4>Breed: {this.state.dog.breed}</h4>
 
                 <div className='recordedDogActions'>
                     <h2>Recent Dog Actions</h2>
@@ -198,7 +200,7 @@ export default class OneDog extends Component {
                             <input
                                 type="string"
                                 name="poop"
-                                placeholder="Time of Poop"
+                                placeholder="Time of poop"
                                 onChange={this.handleInputChange}
                                 value={this.state.newAction.poop}
                             />
@@ -207,7 +209,7 @@ export default class OneDog extends Component {
                             <input
                                 type="string"
                                 name="pee"
-                                placeholder="Time of Pee"
+                                placeholder="Time of pee"
                                 onChange={this.handleInputChange}
                                 value={this.state.newAction.pee}
                             />
@@ -216,7 +218,7 @@ export default class OneDog extends Component {
                             <input
                                 type="string"
                                 name="medicine"
-                                placeholder="Time of Medicine"
+                                placeholder="Time of medicine"
                                 onChange={this.handleInputChange}
                                 value={this.state.newAction.medicine}
                             />
