@@ -1,38 +1,44 @@
 body {
   text-align: center;
-  background-color: bisque;
+  background-color: rgb(235, 250, 255);
   font-family: 'Solway', serif;
+  color:rgb(17, 17, 138)
 }
 
 a {
   text-decoration: none;
-  color: rgb(67, 67, 192);
+  color: rgb(17, 17, 138);
 }
 
+ 
 a:hover {
-  color: goldenrod;
+  color: rgb(40, 110, 23);
   font-size: 18px;
   transition: 0.3s ease;
   cursor: pointer;
 }
 
+
 nav {
   display: flex;
   justify-content: space-around;
   padding: 20px 0;
-  border: solid rgb(67, 67, 192) 5px;
-  background-color: rgb(125, 201, 211);
+  border-bottom: solid rgb(17, 17, 138) 5px;
+  border-right: solid rgb(17, 17, 138) 5px;
+  border-left: solid rgb(17, 17, 138)5px;
+  font-weight: bold;
 }
 
 img {
   width: 250px;
-  border: solid rgb(67, 67, 192) 5px;
+  border: solid rgb(17, 17, 138) 5px;
   border-radius: 50%;
 }
 
 .createForm {
-  border: solid rgb(67, 67, 192) 5px;
+  border: solid rgb(17, 17, 138) 5px;
   margin: 25px 0;
+  color:black;
 }
 
 #createDogForm {
@@ -40,9 +46,9 @@ img {
 }
 
 .recordedDogActions {
-  border: solid rgb(67, 67, 192) 5px;
+  border: solid rgb(17, 17, 138) 5px;
   margin: 25px 0;
-
+  color: black;
 }
 
 .actionInput {
@@ -53,9 +59,22 @@ img {
   justify-content: center;
 }
 
-.dogList {
-  margin-bottom: 50px;
+.dogListSpacing {
+  margin: 75px;
 }
+
+.dogList:hover {
+  border-color: rgb(40, 110, 23);
+  transition: 0.125s ease;
+  cursor: pointer;
+}
+
+.homeList:hover {
+  border-color: rgb(40, 110, 23);
+  transition: 0.125s ease;
+  cursor: pointer;
+}
+
 
 .emoji {
   margin-bottom: 0;
@@ -63,4 +82,37 @@ img {
 
 .home-link {
   margin: 75px;
+}
+
+
+h1 {
+  margin: 50px;
+}
+
+
+.dogName {
+  margin-bottom: 20px;
+}
+
+.recordActionTitle {
+  margin-bottom: 30px;
+}
+
+.submitButton {
+  margin-bottom: 20px;
+}
+
+.submitButton:hover {
+  background: rgb(40, 110, 23);
+  cursor: pointer;
+
+}
+
+.dogFormTitle {
+  margin-bottom: 0px;
+}
+
+
+.dogAction {
+  padding: 8px;
 }

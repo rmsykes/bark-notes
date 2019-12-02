@@ -114,35 +114,35 @@ export default class OneDog extends Component {
             if (action.walk !== 'n/a') {
                 const date = new Date().getDate()
                 const month = new Date().getMonth() + 1
-                return <div>
-                    🚶@ {action.walk} {date}/{month}
+                return <div className='dogAction'>
+                    🚶🐕@ {action.walk} {date}/{month}
                 </div>
             }
             if (action.eat !== 'n/a') {
                 const date = new Date().getDate()
                 const month = new Date().getMonth() + 1
-                return <div>
+                return <div className='dogAction'>
                     🍽 @ {action.eat} {date}/{month}
                 </div>
             }
             if (action.poop !== 'n/a') {
                 const date = new Date().getDate()
                 const month = new Date().getMonth() + 1
-                return <div>
+                return <div className='dogAction'>
                     🚽💩@ {action.poop} {date}/{month}
                 </div>
             }
             if (action.pee !== 'n/a') {
                 const date = new Date().getDate()
                 const month = new Date().getMonth() + 1
-                return <div>
+                return <div className='dogAction'>
                     🚽💦@ {action.pee} {date}/{month}
                 </div>
             }
             if (action.medicine !== 'n/a') {
                 const date = new Date().getDate()
                 const month = new Date().getMonth() + 1
-                return <div>
+                return <div className='dogAction'>
                     💊@ {action.medicine} {date}/{month}
                 </div>
             }
@@ -158,7 +158,7 @@ export default class OneDog extends Component {
                     <Link to='/owner'>Owners</Link>
                 </nav>
 
-                <h1>{this.state.dog.name}</h1>
+                <h1 className='dogName'>{this.state.dog.name}</h1>
 
                 <img src={this.state.dog.photo_url} alt="dog photo" />
                 <h4>Age: {this.state.dog.age}</h4>
@@ -174,11 +174,12 @@ export default class OneDog extends Component {
                 <div className='createForm'>
                     <form onSubmit={this.createNewAction}>
 
-                        <h2>Record New Dog Action</h2>
+                        <h2 className="recordActionTitle">Record New Dog Action</h2>
 
                         <div className='actionInput'>
 
-                            <h1 className='emoji'>🚶</h1>
+
+                            <h2 className='emoji'>Walk 🚶🐕</h2>
                             <input
                                 type="string"
                                 name="walk"
@@ -187,7 +188,7 @@ export default class OneDog extends Component {
                                 value={this.state.newAction.walk}
                             />
 
-                            <h1 className='emoji'>🍽</h1>
+                            <h2 className='emoji'>Feed 🍽</h2>
                             <input
                                 type="string"
                                 name="eat"
@@ -196,7 +197,7 @@ export default class OneDog extends Component {
                                 value={this.state.newAction.eat}
                             />
 
-                            <h1 className='emoji'>🚽💩</h1>
+                            <h2 className='emoji'>Poop 🚽💩</h2>
                             <input
                                 type="string"
                                 name="poop"
@@ -205,7 +206,7 @@ export default class OneDog extends Component {
                                 value={this.state.newAction.poop}
                             />
 
-                            <h1 className='emoji'>🚽💦</h1>
+                            <h2 className='emoji'>Pee 🚽💦</h2>
                             <input
                                 type="string"
                                 name="pee"
@@ -214,7 +215,7 @@ export default class OneDog extends Component {
                                 value={this.state.newAction.pee}
                             />
 
-                            <h1 className='emoji'>💊</h1>
+                            <h2 className='emoji'>Medicine 💊</h2>
                             <input
                                 type="string"
                                 name="medicine"
@@ -225,7 +226,7 @@ export default class OneDog extends Component {
                             <br />
                             <br />
                         </div>
-                        <input type='submit' value='Record New Action' />
+                        <input className='submitButton' type='submit' value='Record New Action' />
                     </form>
 
                 </div>

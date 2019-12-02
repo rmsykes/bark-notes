@@ -58,12 +58,11 @@ export default class AllDogs extends Component {
     render() {
 
         const listOfDogs = this.state.allDogs.map((dog) => {
-            return <div>
+            return <div className='dogListSpacing'>
                 <Link to={`/dog/${dog.id}`}>
-                    <div className='dogList'>
-                        <img src={dog.photo_url} alt="dog photo" />
-                        <br/>
-                        <h2>{dog.name}</h2>
+                    <div>
+                        <img className='dogList' src={dog.photo_url} alt="dog photo" />
+                        <h2 className='dogList'>{dog.name}</h2>
                     </div>
 
                     
@@ -92,7 +91,7 @@ export default class AllDogs extends Component {
 
                         <div className='dogInput'>
 
-                            <h1>Name</h1>
+                            <h2 className='dogFormTitle'>Name</h2>
                             <input
                                 type="string"
                                 name="name"
@@ -101,7 +100,7 @@ export default class AllDogs extends Component {
                                 value={this.state.newDog.name}
                             />
 
-                            <h1>Age</h1>
+                            <h2 className='dogFormTitle'>Age</h2>
                             <input
                                 type="string"
                                 name="age"
@@ -110,7 +109,7 @@ export default class AllDogs extends Component {
                                 value={this.state.newDog.age}
                             />
 
-                            <h1>Breed</h1>
+                            <h2 className='dogFormTitle'>Breed</h2>
                             <input
                                 type="string"
                                 name="breed"
@@ -119,7 +118,7 @@ export default class AllDogs extends Component {
                                 value={this.state.newDog.breed}
                             />
 
-                            <h1>Dog's Photo</h1>
+                            <h2 className='dogFormTitle'>Dog's Photo</h2>
                             <input
                                 type="string"
                                 name="photo_url"
@@ -128,9 +127,8 @@ export default class AllDogs extends Component {
                                 value={this.state.newDog.photo_url}
                             />
 
-                            <br/>
 
-                            <h1>Owner</h1>
+                            <h2 className='dogFormTitle'>Owner</h2>
                             <select
                                 name="owner"
                                 onChange={this.handleInputChange}
@@ -146,7 +144,7 @@ export default class AllDogs extends Component {
                             <br />
                             <br />
                         </div>
-                        <input type='submit' value='Create New Dog' />
+                        <input className="submitButton" type='submit' value='Create New Dog' />
                     </form>
 
                 </div>
