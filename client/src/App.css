@@ -6,10 +6,14 @@ body {
 
 a {
   text-decoration: none;
+  color: rgb(67, 67, 192);
 }
 
 a:hover {
-  color: green;
+  color: goldenrod;
+  font-size: 18px;
+  transition: 0.3s ease;
+  cursor: pointer
 }
 
 nav {
@@ -17,10 +21,13 @@ nav {
   justify-content: space-around;
   padding: 20px 0;
   border: solid rgb(67, 67, 192) 5px;
+  background-color: rgb(125, 201, 211);
 }
 
 img {
   width: 250px;
+  border: solid rgb(67, 67, 192) 5px;
+  border-radius: 50%;
 }
 
 .createForm {

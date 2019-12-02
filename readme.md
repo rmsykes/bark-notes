@@ -6,11 +6,11 @@
 ## Project Explanation: 
 
 Purpose of project as a problem statement: <br>
-This site/application  
+This site/application is for helping families track and document dog's actions. Actions include: walking, feeding, pooping, peeing, and medicine. 
 
 
 Target end user: <br>
-My target end user is 
+My target end user is families 
 
 -------------------------------------------------------------------
 
