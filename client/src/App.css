@@ -18,6 +18,10 @@ img {
   margin: 25px 0;
 }
 
+#createDogForm {
+  margin-top: 400px;
+}
+
 .recordedDogActions {
   border: solid rgb(67, 67, 192) 5px;
   margin: 25px 0;
@@ -26,6 +30,14 @@ img {
 
 .actionInput {
   justify-content: center;
+}
+
+.dogInput {
+  justify-content: center;
+}
+
+.dogList {
+  margin-bottom: 50px;
 }
 
 .emoji {

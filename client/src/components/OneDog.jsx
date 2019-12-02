@@ -112,28 +112,38 @@ export default class OneDog extends Component {
 
         const listOfDogActions = this.state.dog.actions.map((action) => {
             if (action.walk !== 'n/a') {
+                const date = new Date().getDate()
+                const month = new Date().getMonth() + 1
                 return <div>
-                    {action.walk}
+                    🚶@ {action.walk} {date}/{month}
                 </div>
             }
             if (action.eat !== 'n/a') {
+                const date = new Date().getDate()
+                const month = new Date().getMonth() + 1
                 return <div>
-                    {action.eat}
+                    🍽 @ {action.eat} {date}/{month}
                 </div>
             }
             if (action.poop !== 'n/a') {
+                const date = new Date().getDate()
+                const month = new Date().getMonth() + 1
                 return <div>
-                    {action.poop}
+                    🚽💩@ {action.poop} {date}/{month}
                 </div>
             }
             if (action.pee !== 'n/a') {
+                const date = new Date().getDate()
+                const month = new Date().getMonth() + 1
                 return <div>
-                    {action.pee}
+                    🚽💦@ {action.pee} {date}/{month}
                 </div>
             }
             if (action.medicine !== 'n/a') {
+                const date = new Date().getDate()
+                const month = new Date().getMonth() + 1
                 return <div>
-                    {action.medicine}
+                    💊@ {action.medicine} {date}/{month}
                 </div>
             }
         })
@@ -170,7 +180,7 @@ export default class OneDog extends Component {
                             <input
                                 type="string"
                                 name="walk"
-                                placeholder="Record Walk"
+                                placeholder="Time of walk"
                                 onChange={this.handleInputChange}
                                 value={this.state.newAction.walk}
                             />
@@ -179,7 +189,7 @@ export default class OneDog extends Component {
                             <input
                                 type="string"
                                 name="eat"
-                                placeholder="Record Eat"
+                                placeholder="Time of feeding"
                                 onChange={this.handleInputChange}
                                 value={this.state.newAction.eat}
                             />
@@ -188,7 +198,7 @@ export default class OneDog extends Component {
                             <input
                                 type="string"
                                 name="poop"
-                                placeholder="Record Poop"
+                                placeholder="Time of Poop"
                                 onChange={this.handleInputChange}
                                 value={this.state.newAction.poop}
                             />
@@ -197,7 +207,7 @@ export default class OneDog extends Component {
                             <input
                                 type="string"
                                 name="pee"
-                                placeholder="Record Pee"
+                                placeholder="Time of Pee"
                                 onChange={this.handleInputChange}
                                 value={this.state.newAction.pee}
                             />
@@ -206,7 +216,7 @@ export default class OneDog extends Component {
                             <input
                                 type="string"
                                 name="medicine"
-                                placeholder="Record Medicine"
+                                placeholder="Time of Medicine"
                                 onChange={this.handleInputChange}
                                 value={this.state.newAction.medicine}
                             />
