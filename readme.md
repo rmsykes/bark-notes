@@ -27,7 +27,7 @@ https://trello.com/b/J6Zsdeqv/project-4
 ## ERD
 <br>
 
-![ERD](photos/)
+![ERD](photos/ERD.jpg)
 
 -------------------------------------------------------------------
 
