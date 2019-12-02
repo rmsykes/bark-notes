@@ -1,5 +1,15 @@
 body {
   text-align: center;
+  background-color: bisque;
+  font-family: 'Solway', serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  color: green;
 }
 
 nav {
