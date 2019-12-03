@@ -11,7 +11,7 @@ export default class Home extends Component {
                     <Link to='/owner'>Owners</Link>
                 </nav>
 
-                <h1>Hello Home Page</h1>
+                <h1>Canine Recorder</h1>
 
 
                 <div>

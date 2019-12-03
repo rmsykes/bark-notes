@@ -115,35 +115,35 @@ export default class OneDog extends Component {
                 const date = new Date().getDate()
                 const month = new Date().getMonth() + 1
                 return <div className='dogAction'>
-                    🚶🐕@ {action.walk} {date}/{month}
+                    🚶🐕@ {action.walk} {month}/{date}
                 </div>
             }
             if (action.eat !== 'n/a') {
                 const date = new Date().getDate()
                 const month = new Date().getMonth() + 1
                 return <div className='dogAction'>
-                    🍽 @ {action.eat} {date}/{month}
+                    🍽 @ {action.eat} {month}/{date}
                 </div>
             }
             if (action.poop !== 'n/a') {
                 const date = new Date().getDate()
                 const month = new Date().getMonth() + 1
                 return <div className='dogAction'>
-                    🚽💩@ {action.poop} {date}/{month}
+                    🚽💩@ {action.poop} {month}/{date}
                 </div>
             }
             if (action.pee !== 'n/a') {
                 const date = new Date().getDate()
                 const month = new Date().getMonth() + 1
                 return <div className='dogAction'>
-                    🚽💦@ {action.pee} {date}/{month}
+                    🚽💦@ {action.pee} {month}/{date}
                 </div>
             }
             if (action.medicine !== 'n/a') {
                 const date = new Date().getDate()
                 const month = new Date().getMonth() + 1
                 return <div className='dogAction'>
-                    💊@ {action.medicine} {date}/{month}
+                    💊@ {action.medicine} {month}/{date}
                 </div>
             }
         })
