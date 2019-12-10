@@ -2,7 +2,8 @@ body {
   text-align: center;
   background-color: rgb(235, 250, 255);
   font-family: 'Solway', serif;
-  color:rgb(17, 17, 138)
+  color:rgb(17, 17, 138);
+  margin: 0 auto;
 }
 
 a {
@@ -10,29 +11,75 @@ a {
   color: rgb(17, 17, 138);
 }
 
+
  
 a:hover {
-  color: rgb(40, 110, 23);
+  color: silver;
   font-size: 18px;
   transition: 0.3s ease;
   cursor: pointer;
 }
 
+nav a:hover {
+  color: green;
+  font-size: 18px;
+  transition: 0.3s ease;
+  cursor: pointer;
+}
 
 nav {
   display: flex;
   justify-content: space-around;
-  padding: 20px 0;
-  border-bottom: solid rgb(17, 17, 138) 5px;
-  border-right: solid rgb(17, 17, 138) 5px;
-  border-left: solid rgb(17, 17, 138)5px;
+  padding: 45px 0 45px 0;
   font-weight: bold;
+  background: linear-gradient(to left, rgb(24, 158, 175), rgb(89, 166, 177));
+  position: sticky;
+  top: 0;
+}
+
+
+nav a {
+  color:white;
+}
+
+.homeHeader {
+  background: linear-gradient(to left, rgb(24, 158, 175), rgb(89, 166, 177));
+  margin: 0;
+  background-size: cover;
+  color:white;
+}
+
+.homeHeader h1 {
+  margin: 0;
+  padding: 150px 0;
+  background-size: cover;
+  color:white;
 }
 
 img {
   width: 250px;
   border: solid rgb(17, 17, 138) 5px;
   border-radius: 50%;
+}
+
+.appDescription {
+  display: flex;
+  flex-direction: column;
+  background-color: silver;
+}
+
+.appDescription h2 {
+  display: flex;
+  padding: 50px 0 0 50px;
+}
+
+.appDescription p {
+  text-align: center;
+  padding: 0 50px 50px 50px;
+}
+
+.homeBody {
+  /* background-image: url(https://images.unsplash.com/photo-1567459169668-95d355371bda?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2249&q=80); */
 }
 
 .createForm {
@@ -46,8 +93,8 @@ img {
 }
 
 .recordedDogActions {
-  border: solid rgb(17, 17, 138) 5px;
-  margin: 25px 0;
+  background-color: silver;
+  padding: 15px;
   color: black;
 }
 
@@ -70,20 +117,25 @@ img {
 }
 
 .homeList:hover {
-  border-color: rgb(40, 110, 23);
+  border-color: silver;
   transition: 0.125s ease;
   cursor: pointer;
+}
+
+
+.home-link {
+  padding: 75px 0;
+  background-size: cover;
+}
+
+.home-link:hover {
+  color: silver;
 }
 
 
 .emoji {
   margin-bottom: 0;
 }
-
-.home-link {
-  margin: 75px;
-}
-
 
 h1 {
   margin: 70px;
