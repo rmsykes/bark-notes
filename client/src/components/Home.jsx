@@ -13,7 +13,7 @@ export default class Home extends Component {
                         <Link to='/dog'>Dogs</Link>
                         <Link to='/owner'>Owners</Link>
                     </nav>
-                    <h1>Canine Recorder</h1>
+                    <h1>Bark Notes</h1>
                 </div>
 
                 <div className='appDescription'>

@@ -21,9 +21,9 @@ a:hover {
 }
 
 nav a:hover {
-  color: green;
-  font-size: 18px;
-  transition: 0.3s ease;
+  color: orangered;
+  font-size: 1.5em;
+  transition: 0.7s ease;
   cursor: pointer;
 }
 
@@ -35,6 +35,7 @@ nav {
   background: linear-gradient(to left, rgb(24, 158, 175), rgb(89, 166, 177));
   position: sticky;
   top: 0;
+  border-radius: 25px;
 }
 
 
@@ -82,6 +83,21 @@ img {
   /* background-image: url(https://images.unsplash.com/photo-1567459169668-95d355371bda?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2249&q=80); */
 }
 
+.oneDogBody {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 45px 0;
+}
+
+.oneDogBodyInfoOnDog img {
+  width: 400px;
+}
+
+.oneDogBodyInfoOnDog h1 {
+  margin:0;
+  padding:25px;
+}
+
 .createForm {
   border: solid rgb(17, 17, 138) 5px;
   margin: 25px 0;
@@ -93,9 +109,10 @@ img {
 }
 
 .recordedDogActions {
-  background-color: silver;
-  padding: 15px;
-  color: black;
+  background: linear-gradient(to left, rgb(24, 158, 175), rgb(89, 166, 177));
+  padding: 55px;
+  color: white;
+  border-radius: 25px;
 }
 
 .actionInput {

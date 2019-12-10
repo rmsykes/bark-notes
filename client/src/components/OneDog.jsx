@@ -22,7 +22,8 @@ export default class OneDog extends Component {
             pee: '',
             medicine: '',
             dog: '',
-        }
+        },
+        isHidden: true
     }
 
 
@@ -32,6 +33,14 @@ export default class OneDog extends Component {
                 this.setState({ dog: res.data })
             })
     }
+
+    toggleHidden = () => {
+        this.setState({
+          isHidden: !this.state.isHidden
+        })
+      }
+
+
 
 
     createNewAction = (evt) => {
@@ -149,29 +158,8 @@ export default class OneDog extends Component {
         })
 
 
-
-        return (
-            <div>
-                <nav>
-                    <Link to='/'>Home</Link>
-                    <Link to='/dog'>Dogs</Link>
-                    <Link to='/owner'>Owners</Link>
-                </nav>
-
-                <h1 className='dogName'>{this.state.dog.name}</h1>
-
-                <img src={this.state.dog.photo_url} alt="dog photo" />
-                <h4>Age: {this.state.dog.age}</h4>
-                <h4>Breed: {this.state.dog.breed}</h4>
-
-                <div className='recordedDogActions'>
-                    <h2>Recent Dog Actions</h2>
-                    {listOfDogActions.reverse().slice(1, 10)}
-                    <br />
-                </div>
-
-
-                <div className='createForm'>
+        const Child = () => (
+            <div className='createForm'>
                     <form onSubmit={this.createNewAction}>
 
                         <h2 className="recordActionTitle">Record New Dog Action</h2>
@@ -180,7 +168,9 @@ export default class OneDog extends Component {
 
 
                             <h2 className='emoji'>Walk 🚶🐕</h2>
+                            
                             <input
+                            
                                 type="string"
                                 name="walk"
                                 placeholder="Time of walk"
@@ -230,9 +220,45 @@ export default class OneDog extends Component {
                     </form>
 
                 </div>
+            )
+       
+
+        return (
+
+
+            <div>
+                <nav>
+                    <Link to='/'>Home</Link>
+                    <Link to='/dog'>Dogs</Link>
+                    <Link to='/owner'>Owners</Link>
+                </nav>
+
+                <div className='oneDogBody'>
+                    <div className='oneDogBodyInfoOnDog'>
+                        <h1 className='dogName'>{this.state.dog.name}</h1>
+
+                        <img src={this.state.dog.photo_url} alt="dog photo" />
+                        <h4>Age: {this.state.dog.age}</h4>
+                        <h4>Breed: {this.state.dog.breed}</h4>
+                    </div>
+
+
+                    <div className='recordedDogActions'>
+                        <h2>Recent Dog Actions</h2>
+                        {listOfDogActions.reverse().slice(1, 10)}
+                        <br />
+                    </div>
+
+                </div>
+                
+
+                <button onClick={this.toggleHidden}>Create Dog Action</button>
+                {!this.state.isHidden && <Child />}
+
+                
 
 
             </div>
         )
-    }
+    }          
 }
