@@ -60,6 +60,7 @@ nav a {
 
 img {
   width: 250px;
+  height: 250px;
   border: solid black 5px;
   border-radius: 50%;
 }
@@ -88,11 +89,20 @@ img {
 }
 
 
+.allOwnersBody {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 50px;
+  background: linear-gradient(to left, rgb(24, 158, 175), rgb(89, 166, 177));
+  border-radius: 25px;
+  margin: 0 115px;
+  box-shadow: 5px 5px 10px black;
+}
 
 .allDogsBody {
   display: flex;
   justify-content: space-evenly;
-  padding: 50px 0 0 0;
+  padding: 50px 0 20px 0;
   background: linear-gradient(to left, rgb(24, 158, 175), rgb(89, 166, 177));
   border-radius: 25px;
   margin: 0 115px;
@@ -107,6 +117,7 @@ img {
 
 .oneDogBodyInfoOnDog img {
   width: 400px;
+  height: 400px;
 }
 
 .oneDogBodyInfoOnDog h1 {
@@ -191,12 +202,14 @@ h1 {
 
 .submitButton {
   margin-bottom: 20px;
+
 }
+
+
 
 .submitButton:hover {
   background: orangered;
   cursor: pointer;
-
 }
 
 

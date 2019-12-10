@@ -23,8 +23,10 @@ export default class AllOwners extends Component {
     render() {
 
         const listOfOwners = this.state.allOwners.map((owner) => {
-            return <div>
-                {owner.name}
+            return <div className='ownerList'>
+                <img src={owner.photo_url} alt="owner photo" />
+                <h2 className='ownerListName'>{owner.name}</h2>
+
             </div>
         })
 
@@ -36,9 +38,15 @@ export default class AllOwners extends Component {
                     <Link to='/dog'>Dogs</Link>
                     <Link to='/owner'>Owners</Link>
                 </nav>
-                <h1>Owners</h1>
+                <div className='header'>
+                    <h1>Owners</h1>
+                </div>
 
-                <h2>{listOfOwners}</h2>
+                <div className='allOwnersBody'>
+                    {listOfOwners}
+
+                </div>
+
             </div>
         )
     }
