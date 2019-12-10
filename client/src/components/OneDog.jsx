@@ -36,9 +36,9 @@ export default class OneDog extends Component {
 
     toggleHidden = () => {
         this.setState({
-          isHidden: !this.state.isHidden
+            isHidden: !this.state.isHidden
         })
-      }
+    }
 
 
 
@@ -60,6 +60,13 @@ export default class OneDog extends Component {
             this.state.newAction.poop === '' &&
             this.state.newAction.pee === '' &&
             this.state.newAction.medicine === '') {
+                // const date = new Date().getDate()
+                // const month = new Date().getMonth() + 1
+                // date.toString()
+                // month.toString()
+                // let copiedNewAction = { ...this.state.newAction }
+                // copiedNewAction = copiedNewAction.walk.concat({month} + '/' + {date})
+                // this.setState({newAction : copiedNewAction})
             axios.post(`/api/v1/action/`, newAction)
                 .then((res) => {
                     this.componentDidMount()
@@ -116,6 +123,72 @@ export default class OneDog extends Component {
         this.setState({ newAction: copiedNewAction })
     }
 
+    childForm = () => {
+        return (
+            <div className='createForm'>
+                <form onSubmit={this.createNewAction}>
+
+                    <h2 className="recordActionTitle">Record New Dog Action</h2>
+
+                    <div className='actionInput'>
+
+
+                        <h2 className='emoji'>Walk 🚶🐕</h2>
+
+                        <input
+
+                            type="string"
+                            name="walk"
+                            placeholder="Time of walk"
+                            onChange={this.handleInputChange}
+                            value={this.state.newAction.walk}
+                        />
+
+                        <h2 className='emoji'>Feed 🍽</h2>
+                        <input
+                            type="string"
+                            name="eat"
+                            placeholder="Time of feeding"
+                            onChange={this.handleInputChange}
+                            value={this.state.newAction.eat}
+                        />
+
+                        <h2 className='emoji'>Poop 🚽💩</h2>
+                        <input
+                            type="string"
+                            name="poop"
+                            placeholder="Time of poop"
+                            onChange={this.handleInputChange}
+                            value={this.state.newAction.poop}
+                        />
+
+                        <h2 className='emoji'>Pee 🚽💦</h2>
+                        <input
+                            type="string"
+                            name="pee"
+                            placeholder="Time of pee"
+                            onChange={this.handleInputChange}
+                            value={this.state.newAction.pee}
+                        />
+
+                        <h2 className='emoji'>Medicine 💊</h2>
+                        <input
+                            type="string"
+                            name="medicine"
+                            placeholder="Time of medicine"
+                            onChange={this.handleInputChange}
+                            value={this.state.newAction.medicine}
+                        />
+                        <br />
+                        <br />
+                    </div>
+                    <input className='submitButton' type='submit' value='Record New Action' />
+                </form>
+
+            </div>
+        )
+    }
+
 
     render() {
 
@@ -157,72 +230,6 @@ export default class OneDog extends Component {
             }
         })
 
-
-        const Child = () => (
-            <div className='createForm'>
-                    <form onSubmit={this.createNewAction}>
-
-                        <h2 className="recordActionTitle">Record New Dog Action</h2>
-
-                        <div className='actionInput'>
-
-
-                            <h2 className='emoji'>Walk 🚶🐕</h2>
-                            
-                            <input
-                            
-                                type="string"
-                                name="walk"
-                                placeholder="Time of walk"
-                                onChange={this.handleInputChange}
-                                value={this.state.newAction.walk}
-                            />
-
-                            <h2 className='emoji'>Feed 🍽</h2>
-                            <input
-                                type="string"
-                                name="eat"
-                                placeholder="Time of feeding"
-                                onChange={this.handleInputChange}
-                                value={this.state.newAction.eat}
-                            />
-
-                            <h2 className='emoji'>Poop 🚽💩</h2>
-                            <input
-                                type="string"
-                                name="poop"
-                                placeholder="Time of poop"
-                                onChange={this.handleInputChange}
-                                value={this.state.newAction.poop}
-                            />
-
-                            <h2 className='emoji'>Pee 🚽💦</h2>
-                            <input
-                                type="string"
-                                name="pee"
-                                placeholder="Time of pee"
-                                onChange={this.handleInputChange}
-                                value={this.state.newAction.pee}
-                            />
-
-                            <h2 className='emoji'>Medicine 💊</h2>
-                            <input
-                                type="string"
-                                name="medicine"
-                                placeholder="Time of medicine"
-                                onChange={this.handleInputChange}
-                                value={this.state.newAction.medicine}
-                            />
-                            <br />
-                            <br />
-                        </div>
-                        <input className='submitButton' type='submit' value='Record New Action' />
-                    </form>
-
-                </div>
-            )
-       
-
         return (
 
 
@@ -232,6 +239,8 @@ export default class OneDog extends Component {
                     <Link to='/dog'>Dogs</Link>
                     <Link to='/owner'>Owners</Link>
                 </nav>
+
+
 
                 <div className='oneDogBody'>
                     <div className='oneDogBodyInfoOnDog'>
@@ -245,20 +254,20 @@ export default class OneDog extends Component {
 
                     <div className='recordedDogActions'>
                         <h2>Recent Dog Actions</h2>
-                        {listOfDogActions.reverse().slice(1, 10)}
+                        {listOfDogActions.reverse().slice(0, 10)}
                         <br />
                     </div>
 
                 </div>
-                
 
-                <button onClick={this.toggleHidden}>Create Dog Action</button>
-                {!this.state.isHidden && <Child />}
 
-                
+                <button className='createDogActionButton' onClick={this.toggleHidden}>Create Dog Action</button>
+                {this.state.isHidden === false ? this.childForm() : null}
+
+
 
 
             </div>
         )
-    }          
+    }
 }

@@ -2,28 +2,26 @@ body {
   text-align: center;
   background-color: rgb(235, 250, 255);
   font-family: 'Solway', serif;
-  color:rgb(17, 17, 138);
+  color:black;
   margin: 0 auto;
 }
 
 a {
   text-decoration: none;
-  color: rgb(17, 17, 138);
+  color: black;
 }
 
 
  
 a:hover {
-  color: silver;
-  font-size: 18px;
-  transition: 0.3s ease;
+  color: orangered;
+  transition: 0.4s ease;
   cursor: pointer;
 }
 
 nav a:hover {
   color: orangered;
-  font-size: 1.5em;
-  transition: 0.7s ease;
+  transition: 0.4s ease;
   cursor: pointer;
 }
 
@@ -32,10 +30,12 @@ nav {
   justify-content: space-around;
   padding: 45px 0 45px 0;
   font-weight: bold;
+  font-size: 1.15em;
   background: linear-gradient(to left, rgb(24, 158, 175), rgb(89, 166, 177));
   position: sticky;
   top: 0;
   border-radius: 25px;
+  box-shadow: 0px 4px black;
 }
 
 
@@ -43,44 +43,60 @@ nav a {
   color:white;
 }
 
-.homeHeader {
-  background: linear-gradient(to left, rgb(24, 158, 175), rgb(89, 166, 177));
+.header {
+  background: rrgb(235, 250, 255);
   margin: 0;
   background-size: cover;
   color:white;
 }
 
-.homeHeader h1 {
+.header h1 {
   margin: 0;
   padding: 150px 0;
   background-size: cover;
-  color:white;
+  color:orangered;
+  font-size: 3em;
 }
 
 img {
   width: 250px;
-  border: solid rgb(17, 17, 138) 5px;
+  border: solid black 5px;
   border-radius: 50%;
 }
 
 .appDescription {
   display: flex;
   flex-direction: column;
-  background-color: silver;
+  background: linear-gradient(to left, rgb(24, 158, 175), rgb(89, 166, 177));
+  border-radius: 25px;
+  margin: 0 115px;
+  color:white;
+  text-align: center;
+  box-shadow: 5px 5px 10px black;
 }
 
 .appDescription h2 {
   display: flex;
-  padding: 50px 0 0 50px;
+  padding: 40px 0 10px 0;
+  justify-content: center;
 }
 
 .appDescription p {
   text-align: center;
   padding: 0 50px 50px 50px;
+  font-size: 1.125em;
 }
 
-.homeBody {
-  /* background-image: url(https://images.unsplash.com/photo-1567459169668-95d355371bda?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2249&q=80); */
+
+
+.allDogsBody {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 50px 0 0 0;
+  background: linear-gradient(to left, rgb(24, 158, 175), rgb(89, 166, 177));
+  border-radius: 25px;
+  margin: 0 115px;
+  box-shadow: 5px 5px 10px black;
 }
 
 .oneDogBody {
@@ -96,12 +112,19 @@ img {
 .oneDogBodyInfoOnDog h1 {
   margin:0;
   padding:25px;
+  color: black;
+}
+
+.oneDogBodyInfoOnDog {
+  color: black;
 }
 
 .createForm {
-  border: solid rgb(17, 17, 138) 5px;
-  margin: 25px 0;
-  color:black;
+  border: solid black 5px;
+  margin: 25px 265px;
+  color:white;
+  background: linear-gradient(to left, rgb(24, 158, 175), rgb(89, 166, 177));
+border-radius: 25px;
 }
 
 #createDogForm {
@@ -113,6 +136,7 @@ img {
   padding: 55px;
   color: white;
   border-radius: 25px;
+  box-shadow: 5px 10px black;
 }
 
 .actionInput {
@@ -123,19 +147,16 @@ img {
   justify-content: center;
 }
 
-.dogListSpacing {
-  margin: 75px;
-}
 
 .dogList:hover {
-  border-color: rgb(40, 110, 23);
-  transition: 0.125s ease;
+  border-color: orangered;
+  transition: 0.4s ease;
   cursor: pointer;
 }
 
 .homeList:hover {
-  border-color: silver;
-  transition: 0.125s ease;
+  border-color: orangered;
+  transition: 0.4s ease;
   cursor: pointer;
 }
 
@@ -146,7 +167,7 @@ img {
 }
 
 .home-link:hover {
-  color: silver;
+  color: orangered;
 }
 
 
@@ -156,6 +177,7 @@ img {
 
 h1 {
   margin: 70px;
+  color:orangered;
 }
 
 
@@ -172,10 +194,29 @@ h1 {
 }
 
 .submitButton:hover {
-  background: rgb(40, 110, 23);
+  background: orangered;
   cursor: pointer;
 
 }
+
+
+.createDogActionButton {
+  padding:20px;
+  background-color:rgb(89, 166, 177);
+  color: white;
+  font-size: 1.25em;
+  border-radius: 20px;
+  box-shadow: 5px 5px 25px black;
+  border: none;
+
+}
+
+.createDogActionButton:hover {
+  cursor: pointer;
+  transition: .3s ease;
+  background-color: orangered;
+}
+
 
 .dogFormTitle {
   margin-bottom: 0px;

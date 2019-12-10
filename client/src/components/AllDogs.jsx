@@ -77,9 +77,13 @@ export default class AllDogs extends Component {
                     <Link to='/dog'>Dogs</Link>
                     <Link to='/owner'>Owners</Link>
                 </nav>
-                <h1>Dogs</h1>
-
-                {listOfDogs}
+                <div className='header'>
+                    <h1>Dogs</h1>
+                </div>
+                
+                <div className='allDogsBody'>
+                    {listOfDogs}
+                </div>
 
 
 
