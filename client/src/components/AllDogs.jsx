@@ -30,7 +30,7 @@ export default class AllDogs extends Component {
 
 
     getOwnerData = () => {
-        axios.get('/api/v1/owner')
+        axios.get('/api/v1/owner/')
             .then((res) => {
                 this.setState({ ownerData: res.data })
             })

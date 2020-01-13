@@ -28,7 +28,7 @@ export default class OneDog extends Component {
 
 
     componentDidMount = () => {
-        axios.get(`/api/v1/dog/${this.props.match.params.dogId}`)
+        axios.get(`/api/v1/dog/${this.props.match.params.dogId}/`)
             .then((res) => {
                 this.setState({ dog: res.data })
             })

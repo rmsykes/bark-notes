@@ -11,7 +11,7 @@ export default class AllOwners extends Component {
 
 
     componentDidMount() {
-        axios.get('/api/v1/owner')
+        axios.get('/api/v1/owner/')
             .then((res) => {
                 this.setState({ allOwners: res.data })
             })
