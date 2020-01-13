@@ -1,1 +1,1 @@
-web: gunicorn {name of your project folder}.wsgi --log-file -
+web: gunicorn dog_log_app.wsgi --log-file -
